@@ -8,7 +8,6 @@ package aa20201;
 import busquedas.BusquedaSecuencial;
 
 import busquedas.GeneradorDatos;
-import java.awt.BasicStroke;
 import java.awt.Color;
  
 import javax.swing.JFrame;
@@ -34,19 +33,44 @@ public class AA20201 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int limite = 1000;
+        int limite = 10000;
         int[] aux;
         int[] tiempos = new int[limite];
         BusquedaSecuencial b1 = new BusquedaSecuencial();
         XYSeries tiem = new XYSeries("Experimiento");
-        //int[] aux = GeneradorDatos.generarArregloIntPeorCaso(6, 15, 10);
-   for(int j=1;j<limite;j++){
-           aux=GeneradorDatos.generarArregloIntPeorCaso(6, j+1, 1000);
-                int pos= b1.buscar(aux,6);
+               
+        //Peor caso
+//   for(int j=1;j<limite;j++){
+//           aux=GeneradorDatos.generarArregloIntPeorCaso(6, j+1, 1000);
+//                int pos= b1.buscar(aux,6);
+//                   tiempos[j]=(int)b1.gettTotal();
+//                      tiem.add(j, tiempos[j]);
+//                  System.out.println(tiempos[j]);   
+//       } 
+   
+   //Mejor caso
+//   for(int j=0;j<limite;j++){
+//           aux=GeneradorDatos.generarArregloIntMejorCaso(6, j+1, 1000);
+//                int pos= b1.buscar(aux,6);
+//                   tiempos[j]=(int)b1.gettTotal();
+//                      tiem.add(j, tiempos[j]);
+//                  //System.out.println(tiempos[j]);
+//                  System.out.println("posicion"+j);
+//                  System.out.println("numero que tiene"+aux[j]);
+//       } 
+   
+   //Medio caso
+   for(int j=0;j<limite;j++){
+           aux=GeneradorDatos.generarArregloIntMedioCaso(6, j+1, 1000);
+               int pos= b1.buscar(aux,6);
                    tiempos[j]=(int)b1.gettTotal();
                       tiem.add(j, tiempos[j]);
-                  System.out.println(tiempos[j]);   
+                  //System.out.println(tiempos[j]);
+                  System.out.println("posicion"+j);
+                  System.out.println("numero que tiene"+aux[j]);
+                  
        } 
+   
        //grafica y le mandan tiempos
        
        //tiem.add(3, 4);

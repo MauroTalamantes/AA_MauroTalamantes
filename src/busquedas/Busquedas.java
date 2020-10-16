@@ -18,7 +18,7 @@ public class Busquedas {
         {
             if(datos[i]==x)
             {
-                System.out.println("Numero encontrado en la posicion: "+(i+1));
+                //System.out.println("Numero encontrado en la posicion: "+(i+1));
                 encontrado=true;
             }
         }
